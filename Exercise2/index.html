@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Arrays example</title>
+    <script type="text/javascript">
+        var names = []; 
+        function addName() {
+            var txtNameCtrl = document.getElementById("name");
+            names.push(txtNameCtrl.value);
+            
+            var formattedNames = getFormattedNamesString();
+            
+            displayNames(formattedNames);
+
+
+        }
+
+        function getFormattedNamesString() {
+            var namesString = "";
+
+            for (var i = 0; i < names.length; i++) {
+                namesString = namesString +  "<div>" + names[i] + "</div>";
+            }
+            return namesString;
+
+        }
+
+        function displayNames(formattedNames) {
+
+            var resultCtrl = document.getElementById("result");
+            resultCtrl.innerHTML = formattedNames;
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        Enter name:
+        <input type="text" maxlength="50" id="name" />
+    </div>
+    
+        
+        <div>
+        <button onclick="addName()">Add</button>
+    </div>
+    <div>
+        Result:
+    </div>
+    <div id="result">
+
+    </div>
+</body>
+
+</html>
