@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My first javascript code</title>
+    <script type="text/javascript">
+            function displayTime(){
+                //1. Get the control where the time need to be placed
+                var control = document.getElementById("timeContainer"); 
+                if(control){
+                    //2. In order to place the text value inside the div container we have to use either  
+                    // innerHTML (or) inntText
+                    control.innerText = Date();    
+                }
+            }
+        </script>
+    <style>
+        .mainContainer {
+            background-color: #36AFE9;
+            /* You can pick the color codes from https://htmlcolorcodes.com/ */
+            width: 60%;
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%, -50%);
+            height: 100px;
+        }
+
+        .timeContainer {
+            font-size: 5px;
+            font-size: 30px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .controls {
+            padding: 10px;
+            margin-bottom: 2px;
+            background-color: #DAE4E9;
+        }
+
+        button{
+            padding: 10px;
+            background-color: #0F5F88;
+            color: #ffffff;
+            border: 1px solid black;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div id="timeContainer" class="timeContainer">
+            Date and time will be displayed here
+        </div>
+        <div id="controls" class="controls">
+            <!--Register onclick javascript event for button -->
+            <button onclick="displayTime()">Click here to see date & time</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
